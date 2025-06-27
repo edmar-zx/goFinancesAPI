@@ -19,7 +19,8 @@ exports.listTransactions = async (req, res) => {
         const result = await db.query('SELECT * FROM transacoes ORDER BY data DESC');
         res.json(result.rows);
     } catch (err) {
-        console.error(err);
+        console.log("teste");
+        console.log(err);
         res.status(500).json({ error: 'Erro ao listar transações' });
     }
 };
