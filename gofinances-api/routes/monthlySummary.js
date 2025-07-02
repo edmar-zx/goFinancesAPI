@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const resumeController = require('../controllers/resumeController');
+const highlightCardController = require('../controllers/highlightCardController');
 
-router.get('/', resumeController.getMonthlySummary);
+router.get('/', highlightCardController.getMonthlySummary);
 
 module.exports = router;
