@@ -1,7 +1,7 @@
 const db = require('../db');
 
 exports.getEntriesByCategory = async (req, res) => {
-    const { year, month } = req.query;
+    const { year, month, type } = req.query;
 
     try {
         const result = await db.query(`
@@ -10,12 +10,12 @@ exports.getEntriesByCategory = async (req, res) => {
         SUM(valor) AS total
       FROM transacoes
       WHERE 
-        tipo = 'entrada'
+        tipo = $3
         AND EXTRACT(YEAR FROM data) = $1
         AND EXTRACT(MONTH FROM data) = $2
       GROUP BY categoria
       ORDER BY total DESC
-    `, [year, month]);
+    `, [year, month, type]);
 
         res.json(result.rows);
     } catch (err) {
