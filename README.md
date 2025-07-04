@@ -33,6 +33,9 @@ git clone https://github.com/edmar-zx/goFinancesAPI.git
 ```bash
 cd gofinances-api
 ```
+```bash
+npm install
+```
 
 ## Configuração do Ambiente (.env)
 - Crie um arquivo .env na raiz do projeto com as seguintes variáveis (ajuste conforme seu ambiente):
